@@ -44,19 +44,19 @@ def part_two(filename: str):
             count = count + full_rotations
 
             if dir == "R":
-                if (dial_pos + turns) > 100:
+                if (dial_pos + turns) >= 100:
                     count = count + 1
 
                 dial_pos = (dial_pos + turns) % 100
 
             elif dir == "L":
-                if (dial_pos - turns) < 0 and dial_pos != 0:
+                if (dial_pos - turns) <= 0 and dial_pos != 0:
                     count = count + 1
 
                 dial_pos = (dial_pos - turns) % 100
 
-            if dial_pos % 100 == 0:
-                count = count + 1
+            # if dial_pos % 100 == 0:
+            # count = count + 1
 
     print(f"Part 2 count: {count}")
     return count
